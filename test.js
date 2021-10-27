@@ -15,48 +15,47 @@ fetch('./dataset.json')
                 changeKey(key, 'favPet', v)
                 break;
             case 'Wat is je oogkleur?':
-                changeKey(key, 'eyeColor', v[key])
+                changeKey(key, 'eyeColor', v)
                 break;
             case 'Op een schaal van 1 tot 10, hoeveel zin heb je in de Tech Track?':
-                changeKey(key, 'excitementLevel', v[key])
+                changeKey(key, 'excitementLevel', v)
                 break;
             case 'Kies zelf of je deze vraag beantwoord.':
-                changeKey(key, 'chooseQuestion', v[key])
+                changeKey(key, 'chooseQuestion', v)
                 break;
             case 'Wat is je favoriete datum?':
-                changeKey(key, 'favDate', v[key])
+                changeKey(key, 'favDate', v)
                 break;
             case 'Wat is je favoriete datum, maar nu in tekst!':
-                changeKey(key, 'excitementLevel', v[key])
+                changeKey(key, 'excitementLevel', v)
                 break;
             case 'Wat is je favoriete zuivelproduct?':
-                changeKey(key, 'favDairy', v[key])
+                changeKey(key, 'favDairy', v)
                 break;
             case 'Welke kleur kledingstukken heb je aan vandaag? (Meerdere antwoorden mogelijk natuurlijk...)':
-                changeKey(key, 'clothingColor', v[key])
+                changeKey(key, 'clothingColor', v)
                 break;
             case 'Op welke verdieping van het TTH studeer je het liefst?':
-                changeKey(key, 'favFloor', v[key])
+                changeKey(key, 'favFloor', v)
                 break;
             case 'Wat wil je worden als je groot bent?':
-                changeKey(key, 'futureJob', v[key])
+                changeKey(key, 'futureJob', v)
                 break;
             case 'Wat wilde je later worden als je groot bent, maar nu toen je zelf 8 jaar was.':
-                changeKey(key, 'futureJobyoung', v[key])
+                changeKey(key, 'futureJobyoung', v)
                 break;
             case 'Kaas is ook een zoogdier?':
-                changeKey(key, 'cheeseAnimal', v[key])
+                changeKey(key, 'cheeseAnimal', v)
                 break;
             case 'Als je later een auto zou kopen, van welk merk zou deze dan zijn?':
-                changeKey(key, 'carBrand', v[key])
+                changeKey(key, 'carBrand', v)
                 break;
             case 'Wat is je favoriete windrichting?':
-                changeKey(key, 'favDirection', v[key])
+                changeKey(key, 'favDirection', v)
                 break;
             default:
                 key = 'none'
         }
-        console.log(Object.keys(v))
     })
     
 }))
@@ -66,8 +65,9 @@ fetch('./dataset.json')
 
 function changeKey(oldKey, newKey, v) {
 
-    Object.assign(v, {[newKey]: v[oldKey]})
+    Object.assign(v, {[newKey]: v[oldKey].toString().toLowerCase()})
     delete v[oldKey]
+    console.log(v)
 }
 
 
