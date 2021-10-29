@@ -1,3 +1,15 @@
+import * as d3 from "https://cdn.skypack.dev/d3@7";
+
+let colors = []
+
+fetch('./colors.json')
+.then(results => results.json())
+.then(data => {
+    return data.map(obj => {
+        colors.push(obj)
+    })
+})
+
 fetch('./dataset.json')
 .then(results => results.json())
 .then(data => {
@@ -8,17 +20,38 @@ fetch('./dataset.json')
             obj[key] = checkIfEmpty(obj[key])
             obj[key] = removeStripes(obj[key])
         })
-        console.table(obj)
+        return obj
     })
+    
 })
+.then(data => data.map(obj => {
+    changeKey('Wat is je favoriete soort huisdier?', 'favPet', obj)
+    changeKey('Wat is je oogkleur?', 'eyeColor', obj)
+    changeKey('Wat is je favoriete windrichting?', 'favDirection', obj)
+    changeKey('Op een schaal van 1 tot 10, hoeveel zin heb je in de Tech Track?', 'excitmentLevel', obj)
+    changeKey('Kies zelf of je deze vraag beantwoord.', 'chooseAnswer', obj)
+    changeKey('Wat is je favoriete datum?', 'dateFormat', obj)
+    changeKey('Wat is je favoriete datum, maar nu in tekst!', 'dateString', obj)
+    changeKey('Wat is je favoriete zuivelproduct?', 'favDairy', obj)
+    changeKey('Welke kleur kledingstukken heb je aan vandaag? (Meerdere antwoorden mogelijk natuurlijk...)', 'clothColor', obj)
+    changeKey('Op welke verdieping van het TTH studeer je het liefst?', 'tthFloor', obj)
+    changeKey('Wat wil je worden als je groot bent?', 'futureJob', obj)
+    changeKey('Wat wilde je later worden als je groot bent, maar nu toen je zelf 8 jaar was.', 'earlyFutureJob', obj)
+    changeKey('Kaas is ook een zoogdier?', 'cheeseAnimal', obj)
+    changeKey('Als je later een auto zou kopen, van welk merk zou deze dan zijn?', 'futureCar', obj)
+    
+    return obj
+}))
 .then(data => {
-    return data.map(obj => {
-        obj['Wat is je oogkleur?'] = dutchToEnglish(obj['Wat is je oogkleur?'])
-    })
+    makeTable(data)
 })
 .catch(err => {
     console.log(err)
 })
+
+function changeKey(oldKey, newKey, obj) {
+    delete Object.assign(obj, { [newKey]: obj[oldKey] })[oldKey]
+}
 
 function removeCaps(str) {
     return typeof str === 'string' ? str.toLowerCase() : str
@@ -35,6 +68,45 @@ function removeStripes(str) {
 function checkIfEmpty(str) {
     return typeof str === 'string' && str.length < 1 ? 'geen antwoord' : str
 }
+
+function makeTable(obj) {
+    let table = d3.select('body').append('table')
+    let thead = table.append('thead')
+    let tbody = table.append('tbody')
+    let keys = []
+
+    Object.keys(obj).forEach(key => {
+        keys.push(key)
+    })
+
+    thead.append('tr')
+        .selectAll('th')
+        .data(keys).enter()
+        .append('th')
+          .text(function (column) { return column } )
+        
+
+    let rows = tbody.selectAll('tr')
+        .data(obj)
+        .enter()
+        .append('tr');
+
+    
+    
+    let cells = rows.selectAll('td')
+        .data(row => {
+            return keys.map(column => {
+                return {column: column, value: row[column]}
+            })
+        }).enter()
+        .append('td')
+          .text(d => { return d.value });
+
+    return table
+
+}
+
+
 
 
 
