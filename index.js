@@ -69,42 +69,11 @@ function checkIfEmpty(str) {
     return typeof str === 'string' && str.length < 1 ? 'geen antwoord' : str
 }
 
-function makeTable(obj) {
-    let table = d3.select('body').append('table')
-    let thead = table.append('thead')
-    let tbody = table.append('tbody')
-    let keys = []
-
-    Object.keys(obj).forEach(key => {
-        keys.push(key)
-    })
-
-    thead.append('tr')
-        .selectAll('th')
-        .data(keys).enter()
-        .append('th')
-          .text(function (column) { return column } )
-        
-
-    let rows = tbody.selectAll('tr')
-        .data(obj)
-        .enter()
-        .append('tr');
-
+function makeTable(data) {
     
-    
-    let cells = rows.selectAll('td')
-        .data(row => {
-            return keys.map(column => {
-                return {column: column, value: row[column]}
-            })
-        }).enter()
-        .append('td')
-          .text(d => { return d.value });
-
-    return table
-
 }
+
+    
 
 
 
