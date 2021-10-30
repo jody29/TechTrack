@@ -43,7 +43,7 @@ fetch('./dataset.json')
     return obj
 }))
 .then(data => {
-    makeTable(data)
+    renderData(data)
 })
 .catch(err => {
     console.log(err)
@@ -69,8 +69,13 @@ function checkIfEmpty(str) {
     return typeof str === 'string' && str.length < 1 ? 'geen antwoord' : str
 }
 
-function makeTable(data) {
-    
+function renderData(data) {
+    data.map(obj => {
+        let div = document.querySelector('div')
+        let p = document.createElement('p')
+        div.appendChild(p)
+        p.textContent = obj['favPet']
+    })  
 }
 
     
