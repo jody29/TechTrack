@@ -2,15 +2,15 @@
 
 let colors = []
 
-fetch('./src/datasets/colors.json')
+fetch('./src/data/colors.json')
 .then(results => results.json())
 .then(data => {
     return data.map(obj => {
-        colors.push(obj)
+        console.log(obj)
     })
 })
 
-fetch('./src/datasets/dataset.json')
+fetch('./src/data/dataset.json')
 .then(results => results.json())
 .then(data => {
     return data.map(obj => {
