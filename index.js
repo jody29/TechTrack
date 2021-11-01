@@ -43,7 +43,7 @@ fetch('./src/data/dataset.json')
     return obj
 }))
 .then(data => {
-    renderData(data)
+    renderData(data, 'eyeColor')
 })
 .catch(err => {
     console.log(err)
@@ -73,12 +73,12 @@ function checkIfEmpty(str) {
     return typeof str === 'string' && str.length < 1 ? 'geen antwoord' : str
 }
 
-function renderData(data) {
+function renderData(data, key) {
     data.map(obj => {
         let div = document.querySelector('div')
         let p = document.createElement('p')
         div.appendChild(p)
-        p.textContent = obj['eyeColor']
+        p.textContent = obj[key]
     })  
 }
 
