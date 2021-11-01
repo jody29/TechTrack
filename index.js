@@ -1,12 +1,10 @@
-
-
 let colors = []
 
 fetch('./src/data/colors.json')
 .then(results => results.json())
 .then(data => {
     return data.map(obj => {
-        console.log(obj)
+        colors.push(obj)
     })
 })
 
@@ -43,7 +41,12 @@ fetch('./src/data/dataset.json')
     return obj
 }))
 .then(data => {
+    colorToHex(data, 'eyeColor')
+    return data
+})
+.then(data => {
     renderData(data, 'eyeColor')
+    console.log(data)
 })
 .catch(err => {
     console.log(err)
@@ -73,14 +76,30 @@ function checkIfEmpty(str) {
     return typeof str === 'string' && str.length < 1 ? 'geen antwoord' : str
 }
 
+function colorToHex(data, key) {
+    data.map(obj => {
+        let word = obj[key]
+        colors.map(item => {
+            if (item.color === word) {
+                return obj[key] = item.hex
+            } else {
+                return {[key]: obj[key]}
+            }
+        })
+    })
+}
+
 function renderData(data, key) {
     data.map(obj => {
         let div = document.querySelector('div')
         let p = document.createElement('p')
         div.appendChild(p)
+        p.setAttribute('style', 'background-color: ' + obj[key])
         p.textContent = obj[key]
     })  
 }
+
+
 
     
 

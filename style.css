@@ -1,2 +1,12 @@
+p {
+    width: fit-content;
+    padding: 2em;
+    border-radius: 1em;
+    color: white;
+}
 
+div {
+    display: flex;
+    flex-wrap: wrap;
+}
 
