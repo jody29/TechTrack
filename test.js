@@ -88,12 +88,6 @@ async function fetchData(url) {
     }
 }
 
-function dataParse(Arr, key) {
-    Arr.forEach(function(v, i, obj) {
-        
-    })
-}
-
 
 function changeKey(oldKey, newKey, v) {
     Object.assign(v, {[newKey]: v[oldKey].toString().toLowerCase()})
