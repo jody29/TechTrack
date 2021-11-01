@@ -2,7 +2,7 @@
 
 let colors = []
 
-fetch('./colors.json')
+fetch('./src/datasets/colors.json')
 .then(results => results.json())
 .then(data => {
     return data.map(obj => {
@@ -10,7 +10,7 @@ fetch('./colors.json')
     })
 })
 
-fetch('./dataset.json')
+fetch('./src/datasets/dataset.json')
 .then(results => results.json())
 .then(data => {
     return data.map(obj => {
