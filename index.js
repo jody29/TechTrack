@@ -1,4 +1,4 @@
-import * as d3 from "https://cdn.skypack.dev/d3@7";
+
 
 let colors = []
 
@@ -53,12 +53,16 @@ function changeKey(oldKey, newKey, obj) {
     delete Object.assign(obj, { [newKey]: obj[oldKey] })[oldKey]
 }
 
+function removeSpace(str) {
+    return typeof str === 'string' ? str.replaceAll('', '') : str
+}
+
 function removeCaps(str) {
     return typeof str === 'string' ? str.toLowerCase() : str
 }
 
 function removeQuestionMark(str) {
-    return typeof str === 'string' ? str.replaceAll('?', '') : str
+    return typeof str === 'string' ? str.split(' ').join('') : str
 }
 
 function removeStripes(str) {

@@ -1,5 +1,5 @@
 {
-  "name": "techtrack",
+  "name": "functional-programming",
   "version": "1.0.0",
   "description": "![GitHub](https://img.shields.io/github/license/jody29/TechTrack?style=for-the-badge)",
   "main": "index.js",
@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/jody29/TechTrack.git"
   },
-  "author": "",
+  "author": "Jody Lorist",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jody29/TechTrack/issues"
