@@ -74,7 +74,7 @@ function renderData(data) {
         let div = document.querySelector('div')
         let p = document.createElement('p')
         div.appendChild(p)
-        p.textContent = obj['favPet']
+        p.textContent = obj['eyeColor']
     })  
 }
 
