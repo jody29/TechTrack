@@ -14,5 +14,19 @@
     {
         "color": "grijs",
         "hex": "#808080"
+    },
+    {
+        "color": "groengrijs",
+        "hex": "#89AE89"
+    },
+    {
+        "color": "groenblauw",
+        "hex": "#0d98ba"
+    },
+    {
+        "color": "donkerbruin",
+        "hex": "#964B00"
     }
+
+    
 ]

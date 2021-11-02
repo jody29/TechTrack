@@ -95,7 +95,7 @@ function renderData(data, key) {
         let p = document.createElement('p')
         div.appendChild(p)
         p.setAttribute('style', 'background-color: ' + obj[key])
-        p.textContent = obj[key]
+        p.textContent = obj[key].toUpperCase()
     })  
 }
 
