@@ -1,6 +1,6 @@
-import fetchData from "./fetch-data.js";
+import aFetch from "./fetch-data.js";
 
-fetchData()
+
 
     
 

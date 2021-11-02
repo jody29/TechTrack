@@ -8,8 +8,8 @@ import colorToHex from './filters/color-to-hex.js'
 import renderData from './filters/render-data.js'
 import directionToEmoji from './filters/direction-to-emoji.js'
 
-function fetchData() { // Declaring the fetchdata function. 
-    fetch('./src/data/dataset.json') // fetching the dataset.json file
+
+export default fetch('./src/data/dataset.json') // fetching the dataset.json file
 .then(results => results.json()) //parsing the json data to javascript object
 .then(data => {
     return data.map(obj => { // looping over all the surveys from the data object
@@ -52,6 +52,3 @@ function fetchData() { // Declaring the fetchdata function.
 .catch(err => { // if an error occurs, console.log the error
     console.log(err)
 })
-}
-
-export default fetchData // export the fetchData module
