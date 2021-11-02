@@ -1,3 +1,5 @@
+import changeKey from './change-key.js'
+
 let colors = []
 
 fetch('./src/data/colors.json')
@@ -51,10 +53,6 @@ fetch('./src/data/dataset.json')
 .catch(err => {
     console.log(err)
 })
-
-function changeKey(oldKey, newKey, obj) {
-    delete Object.assign(obj, { [newKey]: obj[oldKey] })[oldKey]
-}
 
 function removeSpace(str) {
     return typeof str === 'string' ? str.replaceAll('', '') : str
