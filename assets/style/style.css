@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(231, 230, 230);
+}
+
+div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1em;
+    justify-content: center;
+    width: 70%;
+    margin-bottom: 2em;
+    padding: 1em 0;
+    box-shadow: 0px 0px 5px gray;
+    border-radius: 1em;
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+p {
+    width: 3em;
+    font-size: 2.3em;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+    margin: 1em;
+}
+

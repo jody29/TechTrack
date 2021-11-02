@@ -6,6 +6,7 @@ import removeStripes from './filters/remove-stripes.js'
 import checkIfEmpty from './filters/check-empty.js'
 import colorToHex from './filters/color-to-hex.js'
 import renderData from './filters/render-data.js'
+import directionToEmoji from './filters/direction-to-emoji.js'
 
 function fetchData() { // Declaring the fetchdata function. 
     fetch('./src/data/dataset.json') // fetching the dataset.json file
@@ -42,10 +43,11 @@ function fetchData() { // Declaring the fetchdata function.
 }))
 .then(data => {
     colorToHex(data, 'eyeColor') // transforming all eyeColors to hexcode 
+    directionToEmoji(data, 'favDirection')
     return data // returning data with hexcode eyeColors
 })
 .then(data => {
-    renderData(data, 'eyeColor') // rendering all eyeColors
+    renderData(data, 'eyeColor', 'favDirection') // rendering all eyeColors
 })
 .catch(err => { // if an error occurs, console.log the error
     console.log(err)

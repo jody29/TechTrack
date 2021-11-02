@@ -1,0 +1,18 @@
+[
+    {
+        "direction": "noord",
+        "emoji": "⬆"
+    },
+    {
+        "direction": "oost",
+        "emoji": "➡"
+    },
+    {
+        "direction": "zuid",
+        "emoji": "⬇"
+    },
+    {
+        "direction": "west",
+        "emoji": "⬅"
+    }
+]
