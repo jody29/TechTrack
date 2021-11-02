@@ -1,14 +1,10 @@
 import changeKey from './change-key.js'
-
-let colors = []
-
-fetch('./src/data/colors.json')
-.then(results => results.json())
-.then(data => {
-    return data.map(obj => {
-        colors.push(obj)
-    })
-})
+import removeCaps from './filters/remove-caps.js'
+import removeQuestionMark from './filters/remove-question.js'
+import removeStripes from './filters/remove-stripes.js'
+import checkIfEmpty from './filters/check-empty.js'
+import colorToHex from './filters/color-to-hex.js'
+import renderData from './filters/render-data.js'
 
 fetch('./src/data/dataset.json')
 .then(results => results.json())
@@ -48,54 +44,10 @@ fetch('./src/data/dataset.json')
 })
 .then(data => {
     renderData(data, 'eyeColor')
-    console.log(data)
 })
 .catch(err => {
     console.log(err)
 })
-
-function removeSpace(str) {
-    return typeof str === 'string' ? str.replaceAll('', '') : str
-}
-
-function removeCaps(str) {
-    return typeof str === 'string' ? str.toLowerCase() : str
-}
-
-function removeQuestionMark(str) {
-    return typeof str === 'string' ? str.split(' ').join('') : str
-}
-
-function removeStripes(str) {
-    return typeof str === 'string' ? str.replaceAll('-', '') : str
-}
-
-function checkIfEmpty(str) {
-    return typeof str === 'string' && str.length < 1 ? 'geen antwoord' : str
-}
-
-function colorToHex(data, key) {
-    data.map(obj => {
-        let word = obj[key]
-        colors.map(item => {
-            if (item.color === word) {
-                return obj[key] = item.hex
-            } else {
-                return {[key]: obj[key]}
-            }
-        })
-    })
-}
-
-function renderData(data, key) {
-    data.map(obj => {
-        let div = document.querySelector('div')
-        let p = document.createElement('p')
-        div.appendChild(p)
-        p.setAttribute('style', 'background-color: ' + obj[key])
-        p.textContent = obj[key].toUpperCase()
-    })  
-}
 
 
 
