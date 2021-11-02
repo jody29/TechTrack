@@ -1,3 +1,4 @@
+// importing all the modules
 import changeKey from './change-key.js'
 import removeCaps from './filters/remove-caps.js'
 import removeQuestionMark from './filters/remove-question.js'
@@ -6,22 +7,22 @@ import checkIfEmpty from './filters/check-empty.js'
 import colorToHex from './filters/color-to-hex.js'
 import renderData from './filters/render-data.js'
 
-function fetchData() {
-    fetch('./src/data/dataset.json')
-.then(results => results.json())
+function fetchData() { // Declaring the fetchdata function. 
+    fetch('./src/data/dataset.json') // fetching the dataset.json file
+.then(results => results.json()) //parsing the json data to javascript object
 .then(data => {
-    return data.map(obj => {
-        Object.keys(obj).forEach(key => {
-            obj[key] = removeCaps(obj[key])
-            obj[key] = removeQuestionMark(obj[key])
-            obj[key] = checkIfEmpty(obj[key])
-            obj[key] = removeStripes(obj[key])
+    return data.map(obj => { // looping over all the surveys from the data object
+        Object.keys(obj).forEach(key => { 
+            obj[key] = removeCaps(obj[key]) // setting all the strings to lowercase
+            obj[key] = removeQuestionMark(obj[key]) // removing all question marks in strings
+            obj[key] = checkIfEmpty(obj[key]) // check if given answer is empty
+            obj[key] = removeStripes(obj[key]) // removing all strips in strings
         })
-        return obj
+        return obj // retuning the filtered data
     })
     
 })
-.then(data => data.map(obj => {
+.then(data => data.map(obj => { // changing all the keys to simpler keys
     changeKey('Wat is je favoriete soort huisdier?', 'favPet', obj)
     changeKey('Wat is je oogkleur?', 'eyeColor', obj)
     changeKey('Wat is je favoriete windrichting?', 'favDirection', obj)
@@ -37,18 +38,18 @@ function fetchData() {
     changeKey('Kaas is ook een zoogdier?', 'cheeseAnimal', obj)
     changeKey('Als je later een auto zou kopen, van welk merk zou deze dan zijn?', 'futureCar', obj)
     
-    return obj
+    return obj // returning data with new keys
 }))
 .then(data => {
-    colorToHex(data, 'eyeColor')
-    return data
+    colorToHex(data, 'eyeColor') // transforming all eyeColors to hexcode 
+    return data // returning data with hexcode eyeColors
 })
 .then(data => {
-    renderData(data, 'eyeColor')
+    renderData(data, 'eyeColor') // rendering all eyeColors
 })
-.catch(err => {
+.catch(err => { // if an error occurs, console.log the error
     console.log(err)
 })
 }
 
-export default fetchData
+export default fetchData // export the fetchData module
