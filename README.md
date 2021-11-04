@@ -7,7 +7,6 @@ Here you can see a preview of my assignment. I decided to combine the eyecolor a
 ## Table of contents
 * [💡 Concept]()
 * [⚙️ Installation]()
-* [:inbox_tray: Data]()
 * [:pray: Wishlist]()
 * [:white_check_mark: Rubric]()
 * [:information_source: Resources]()
@@ -29,10 +28,6 @@ Right clik on the index.html file and select
 <br/>
 ![livepreview](assets/img/livepreview.png)
 This way you can open the file in your browser
-
-
-## :inbox_tray: Data
-Documentation of how i cleaned the data can be found on the [wiki]()
 
 ## :pray: Wishlist
 * npm package to convert the color names to hexcode
