@@ -24,7 +24,9 @@ $ git clone https://github.com/jody29/functional-programming.git
 
 When using visual studio code, download the Live Server extension
 ![liveserver](assets/img/live_server.png)
+<br/>
 Right clik on the index.html file and select
+<br/>
 ![livepreview](assets/img/livepreview.png)
 
 
