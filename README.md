@@ -5,25 +5,25 @@
 Here you can see a preview of my assignment. I decided to combine the eyecolor and the favorite wind direction of the student.
 
 ## Table of contents
-* [Concept]()
-* [Installation]()
-* [Data]()
-* [Wishlist]()
-* [Rubric]()
-* [Resources]()
-* [License]()
+* [💡 Concept]()
+* [⚙️ Installation]()
+* [:inbox_tray: Data]()
+* [:pray: Wishlist]()
+* [:white_check_mark: Rubric]()
+* [:information_source: Resources]()
+* [:copyright: License]()
 
-## :bulb: Concept
+## 💡 Concept
 
-## Installation
+## ⚙️ Installation
 
-## Data
+## :inbox_tray: Data
 
-## Wishlist
+## :pray: Wishlist
 
-## Rubric
+## :white_check_mark: Rubric
 
-## Resources
+## :information_source: Resources
 
-## License
+## :copyright: License
 ![GitHub](https://img.shields.io/github/license/jody29/TechTrack?style=for-the-badge)
