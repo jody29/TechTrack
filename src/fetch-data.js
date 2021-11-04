@@ -7,6 +7,7 @@ import checkIfEmpty from './filters/check-empty.js'
 import colorToHex from './filters/color-to-hex.js'
 import renderData from './filters/render-data.js'
 import directionToEmoji from './filters/direction-to-emoji.js'
+import removeSpace from './filters/remove-space.js'
 
 
 export default fetch('./src/data/dataset.json') // fetching the dataset.json file
@@ -41,6 +42,13 @@ export default fetch('./src/data/dataset.json') // fetching the dataset.json fil
     
     return obj // returning data with new keys
 }))
+.then(data => {
+    data.map(obj => {
+        obj['eyeColor'] = removeSpace(obj['eyeColor']) // remove spaces in eyecolors
+        obj['favDirection'] = removeSpace(obj['favDirection']) // remove spaces in favorite directions
+    })
+    return data
+})
 .then(data => {
     colorToHex(data, 'eyeColor') // transforming all eyeColors to hexcode 
     directionToEmoji(data, 'favDirection')
