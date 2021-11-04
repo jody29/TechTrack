@@ -55,7 +55,7 @@ export default fetch('./src/data/dataset.json') // fetching the dataset.json fil
     return data // returning data with hexcode eyeColors
 })
 .then(data => {
-    renderData(data, 'eyeColor', 'favDirection') // rendering all eyeColors
+    renderData(data, 'eyeColor', 'favDirection') // rendering all eyeColors and favDirections
 })
 .catch(err => { // if an error occurs, console.log the error
     console.log(err)

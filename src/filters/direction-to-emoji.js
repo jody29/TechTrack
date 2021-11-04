@@ -4,13 +4,11 @@ function directionToEmoji(data, key) {
     data.map(obj => {
         let word = obj[key]
         directions.map(item => {
-            if (item.direction === word) {
-                return obj[key] = item.emoji
-            } else {
-                return {[key]: obj[key]}
-            }
+            return item.direction === word ? obj[key] = item.emoji : {[key]: obj[key]}
         })
     })
 }
+
+
 
 export default directionToEmoji
