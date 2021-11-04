@@ -88,7 +88,13 @@ Documentation of how i cleaned the data can be found on the [wiki]()
 </table>
 
 ## :information_source: Resources
+### Credits
+* Our teachers at the [CMD Tech Track](https://github.com/cmda-tt).
+* My support group.
+* All other students who helped me in time of need.
 
+### inspiration sources
+* [Deanna Bosschert](https://github.com/deannabosschert) for inspiration for my documentation
 
 ## :copyright: License
 ![GitHub](https://img.shields.io/github/license/jody29/TechTrack?style=for-the-badge)
