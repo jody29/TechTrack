@@ -17,10 +17,16 @@ Here you can see a preview of my assignment. I decided to combine the eyecolor a
 My concept was to fetch data from a survey filled in by students. After fetching the data i cleaned the data. Then i decided to display the eyecolor and favorite wind direction of the students.
 
 ## ⚙️ Installation
-just paste this command in your command line and run the command. It will clone this repository in to a local repo.
+Clone the repo to your own device
 ```bash
-git clone https://github.com/jody29/functional-programming.git
+$ git clone https://github.com/jody29/functional-programming.git
 ```
+
+When using visual studio code, download the Live Server extension
+![liveserver](assets/img/live_server.png)
+Right clik on the index.html file and select
+![livepreview](assets/img/livepreview.png)
+
 
 ## :inbox_tray: Data
 Documentation of how i cleaned the data can be found on the [wiki]()
@@ -79,6 +85,7 @@ Documentation of how i cleaned the data can be found on the [wiki]()
 </table>
 
 ## :information_source: Resources
+
 
 ## :copyright: License
 ![GitHub](https://img.shields.io/github/license/jody29/TechTrack?style=for-the-badge)
